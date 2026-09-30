@@ -1,0 +1,1200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog & Strategic Insights | Aken Tech Solution</title>
+    <meta
+      name="description"
+      content="Aken Tech Solution — Expert perspectives on enterprise technology, digital marketing, AI workflows, and scalable growth architecture."
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandNavy: '#0a1f44',
+              brandNavyDark: '#061a35',
+              brandNavyDeeper: '#04162d',
+              brandBlue: '#126fe8',
+              brandBlueHover: '#0b5ecb',
+              brandLight: '#eaf3ff',
+              brandText: '#172033',
+              brandMuted: '#64748b',
+              brandBorder: '#dce5f0',
+            },
+            fontFamily: {
+              sans: [
+                'Inter',
+                'ui-sans-serif',
+                'system-ui',
+                '-apple-system',
+                'BlinkMacSystemFont',
+                '"Segoe UI"',
+                'Roboto',
+                'sans-serif',
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        --navy: #0a1f44;
+        --navy-dark: #061a35;
+        --blue: #126fe8;
+        --blue-hover: #0b5ecb;
+        --light: #eaf3ff;
+        --text: #172033;
+        --muted: #64748b;
+        --border: #dce5f0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--text);
+        background-color: #f8fafc;
+      }
+      .container-x {
+        max-width: 1260px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      /* Enterprise Card Architecture */
+      .card-base {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 0.2s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 30px -8px rgba(10, 31, 68, 0.08), 0 4px 12px -2px rgba(10, 31, 68, 0.04);
+        border-color: #cbd5e1;
+      }
+      /* Typography & Utility Elements */
+      .eyebrow-tag {
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+      .heading-lead {
+        font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+        line-height: 1.12;
+        letter-spacing: -0.025em;
+        font-weight: 800;
+      }
+      .nav-link {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #24324b;
+        padding: 0.65rem 0.5rem;
+        border-bottom: 2px solid transparent;
+        transition: all 0.2s ease;
+      }
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--blue);
+        border-color: var(--blue);
+      }
+      .topbar {
+        background: var(--navy);
+        color: #ffffff;
+        font-size: 12px;
+      }
+      .logo-mark {
+        font-weight: 900;
+        font-style: italic;
+        letter-spacing: -0.08em;
+        font-size: 30px;
+        color: var(--blue);
+        line-height: 0.8;
+      }
+      .logo-name {
+        font-weight: 800;
+        line-height: 1.05;
+        color: var(--navy);
+      }
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.45rem;
+        border-radius: 8px;
+        padding: 0.75rem 1.15rem;
+        font-weight: 700;
+        font-size: 0.85rem;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .btn-primary {
+        background: var(--blue);
+        color: #ffffff;
+      }
+      .btn-primary:hover {
+        background: var(--blue-hover);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 14px rgba(18, 111, 232, 0.28);
+      }
+      .btn-light {
+        background: #ffffff;
+        color: var(--navy);
+      }
+      .btn-light:hover {
+        background: #f1f5f9;
+        transform: translateY(-1px);
+      }
+      /* Tab Bar Scrollbar Reset */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      /* Category Tab Pill */
+      .category-pill {
+        white-space: nowrap;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 0.5rem 1.05rem;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        background: #ffffff;
+        color: #475569;
+        transition: all 0.18s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        cursor: pointer;
+      }
+      .category-pill:hover {
+        background: #f8fafc;
+        border-color: #cbd5e1;
+        color: var(--navy);
+      }
+      .category-pill.active {
+        background: var(--blue);
+        color: #ffffff;
+        border-color: var(--blue);
+        box-shadow: 0 4px 12px rgba(18, 111, 232, 0.24);
+      }
+      .category-pill.active .pill-count {
+        background: rgba(255, 255, 255, 0.22);
+        color: #ffffff;
+      }
+      .pill-count {
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 999px;
+        background: #f1f5f9;
+        color: var(--muted);
+      }
+      .mobile-menu {
+        display: none;
+      }
+      .mobile-menu.open {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="container-x h-9 flex items-center justify-between">
+        <span class="tracking-wide font-medium flex items-center gap-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
+          Your Growth Partner in Technology & Marketing
+        </span>
+        <div class="hidden sm:flex items-center gap-6 text-slate-300">
+          <a href="tel:+919876543210" class="hover:text-white transition flex items-center gap-1.5">
+            <span>☎</span> +91 98765 43210
+          </a>
+          <a href="mailto:hello@akentech.in" class="hover:text-white transition flex items-center gap-1.5">
+            <span>✉</span> hello@akentech.in
+          </a>
+          <div class="flex items-center gap-3.5 ml-2 border-l border-slate-700 pl-4">
+            <a href="#" class="hover:text-sky-300 font-bold transition text-xs" title="LinkedIn">in</a>
+            <a href="#" class="hover:text-sky-300 font-bold transition text-xs" title="Instagram">◎</a>
+            <a href="#" class="hover:text-sky-300 font-bold transition text-xs" title="YouTube">▶</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-slate-100">
+      <div class="container-x h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2.5">
+          <span class="logo-mark">AT</span>
+          <span class="logo-name text-sm">
+            Aken Tech<br />
+            <span class="text-xs font-semibold text-slate-500 tracking-wider">Solution</span>
+          </span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-2">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="services.html">Services</a>
+          <a class="nav-link" href="products.html">Products</a>
+          <a class="nav-link" href="industries.html">Industries</a>
+          <a class="nav-link" href="portfolio.html">Portfolio</a>
+          <a class="nav-link active" href="blog.html">Blog</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a
+            href="contact.html"
+            class="btn btn-primary text-xs hidden md:inline-flex"
+          >
+            Talk to an Expert →
+          </a>
+          <button
+            class="md:hidden text-2xl text-slate-800 p-1 rounded-md focus:outline-none"
+            onclick="toggleMenu()"
+            aria-label="Toggle navigation menu"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobileMenu" class="mobile-menu md:hidden border-t bg-white px-5 pb-5 pt-2">
+        <a class="block py-2.5 border-b border-slate-100 font-semibold text-slate-800" href="index.html">Home</a>
+        <a class="block py-2.5 border-b border-slate-100 font-semibold text-slate-800" href="about.html">About</a>
+        <a class="block py-2.5 border-b border-slate-100 font-semibold text-slate-800" href="services.html">Services</a>
+        <a class="block py-2.5 border-b border-slate-100 font-semibold text-slate-800" href="products.html">Products</a>
+        <a class="block py-2.5 border-b border-slate-100 font-semibold text-slate-800" href="industries.html">Industries</a>
+        <a class="block py-2.5 border-b border-slate-100 font-semibold text-slate-800" href="portfolio.html">Portfolio</a>
+        <a class="block py-2.5 border-b border-slate-100 font-semibold text-blue-600" href="blog.html">Blog</a>
+        <a class="block py-2.5 border-b border-slate-100 font-semibold text-slate-800" href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary mt-4 w-full justify-center">Talk to an Expert →</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-[#071933] text-white py-14 lg:py-20 overflow-hidden">
+      <!-- Background Ambient Glow & Grid -->
+      <div
+        class="absolute inset-0 bg-cover bg-center opacity-20 pointer-events-none"
+        style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80');"
+      ></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#061a35] via-[#061a35]/95 to-[#061a35]/70 pointer-events-none"></div>
+
+      <div class="container-x relative z-10">
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+          <!-- Left: Main Title, Subtext & Reactive Search -->
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 text-xs font-semibold text-sky-300 bg-sky-950/80 border border-sky-800/80 rounded-full px-3.5 py-1 mb-5">
+              <span>Home</span>
+              <span class="text-sky-500">›</span>
+              <span class="text-white font-medium">Executive Insights & Publications</span>
+            </div>
+
+            <h1 class="heading-lead text-white">
+              Insights, Ideas & Digital
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-400">Growth Strategies</span>
+            </h1>
+
+            <p class="text-slate-300 text-sm sm:text-base mt-4 max-w-xl leading-relaxed">
+              Curated perspectives from Aken Tech Solution’s engineering and performance marketing teams. Practical frameworks for automation, custom software, and omnichannel customer growth.
+            </p>
+
+            <!-- Integrated Live Search Bar -->
+            <div class="mt-8 max-w-xl">
+              <div class="relative flex items-center bg-white rounded-lg shadow-xl border border-slate-200/40 p-1.5 focus-within:ring-2 focus-within:ring-blue-400 transition">
+                <span class="pl-3 pr-2 text-slate-400 text-base select-none">🔍</span>
+                <input
+                  id="blogSearch"
+                  type="text"
+                  placeholder="Search articles, strategies, tech stacks..."
+                  class="w-full text-slate-800 text-sm placeholder:text-slate-400 bg-transparent py-2 outline-none"
+                  autocomplete="off"
+                />
+                <button
+                  type="button"
+                  id="clearSearchBtn"
+                  class="hidden text-slate-400 hover:text-slate-600 px-2 text-xs font-bold transition"
+                >
+                  Clear
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary !py-2 !px-4 text-xs font-semibold tracking-wide shrink-0"
+                >
+                  Search
+                </button>
+              </div>
+
+              <!-- Quick Trending Tags -->
+              <div class="flex flex-wrap items-center gap-2 mt-3.5 text-xs text-slate-300">
+                <span class="text-slate-400 font-medium">Trending searches:</span>
+                <button type="button" class="quick-tag bg-white/10 hover:bg-white/20 border border-white/15 px-2.5 py-1 rounded-md transition text-slate-200" data-tag="WhatsApp">#WhatsApp</button>
+                <button type="button" class="quick-tag bg-white/10 hover:bg-white/20 border border-white/15 px-2.5 py-1 rounded-md transition text-slate-200" data-tag="CRM">#EnterpriseCRM</button>
+                <button type="button" class="quick-tag bg-white/10 hover:bg-white/20 border border-white/15 px-2.5 py-1 rounded-md transition text-slate-200" data-tag="Meta Ads">#MetaAds</button>
+                <button type="button" class="quick-tag bg-white/10 hover:bg-white/20 border border-white/15 px-2.5 py-1 rounded-md transition text-slate-200" data-tag="AI">#AI2025</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Spotlight / Executive Report Card -->
+          <div class="lg:col-span-5">
+            <div class="bg-gradient-to-b from-slate-900/90 to-[#0a1f44] border border-slate-700/80 rounded-xl p-5 shadow-2xl backdrop-blur-sm">
+              <div class="flex items-center justify-between text-xs pb-3 border-b border-slate-800">
+                <span class="flex items-center gap-1.5 text-sky-400 font-bold tracking-wider uppercase text-[11px]">
+                  <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                  Spotlight Editorial
+                </span>
+                <span class="text-slate-400 font-mono text-[11px]">Q3 Executive Brief</span>
+              </div>
+
+              <div class="mt-4 relative rounded-lg overflow-hidden border border-slate-700">
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80"
+                  alt="Enterprise analytics dashboard"
+                  class="w-full h-44 object-cover"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3 text-white">
+                  <div class="text-[10px] font-bold text-sky-300 uppercase tracking-widest">Industry Architecture</div>
+                  <div class="text-sm font-bold leading-tight mt-0.5">Modernizing Enterprise Lead Pipelines with Cloud AI</div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 mt-4 pt-3 border-t border-slate-800 text-xs">
+                <div class="bg-slate-800/60 p-2.5 rounded border border-slate-700/60">
+                  <div class="text-[10px] text-slate-400 font-semibold">AVERAGE LIFT</div>
+                  <div class="text-base font-extrabold text-white mt-0.5">+42% Conversion</div>
+                </div>
+                <div class="bg-slate-800/60 p-2.5 rounded border border-slate-700/60">
+                  <div class="text-[10px] text-slate-400 font-semibold">DEPLOYMENT SPEED</div>
+                  <div class="text-base font-extrabold text-white mt-0.5">&lt; 14 Business Days</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Tabs Navigation -->
+    <section class="border-b border-slate-200 bg-white sticky top-16 z-40 shadow-[0_2px_8px_rgba(10,31,68,0.03)]">
+      <div class="container-x py-3 flex items-center justify-between gap-3">
+        <div class="no-scrollbar flex items-center gap-2 overflow-x-auto w-full py-0.5" id="categoryTabs">
+          <button class="category-pill active" data-filter="all">
+            <span>All Posts</span>
+            <span class="pill-count" id="count-all">8</span>
+          </button>
+          <button class="category-pill" data-filter="digital-marketing">
+            <span>Digital Marketing</span>
+            <span class="pill-count">1</span>
+          </button>
+          <button class="category-pill" data-filter="business-growth">
+            <span>Business Growth</span>
+            <span class="pill-count">1</span>
+          </button>
+          <button class="category-pill" data-filter="web-development">
+            <span>Web Development</span>
+            <span class="pill-count">1</span>
+          </button>
+          <button class="category-pill" data-filter="whatsapp-automation">
+            <span>WhatsApp & Automation</span>
+            <span class="pill-count">2</span>
+          </button>
+          <button class="category-pill" data-filter="real-estate">
+            <span>Real Estate</span>
+            <span class="pill-count">1</span>
+          </button>
+          <button class="category-pill" data-filter="ngo">
+            <span>NGO & Social Impact</span>
+            <span class="pill-count">1</span>
+          </button>
+          <button class="category-pill" data-filter="ai-&-technology">
+            <span>AI & Technology</span>
+            <span class="pill-count">2</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="py-12 bg-slate-50/70">
+      <div class="container-x">
+        <!-- Featured Article Block -->
+        <article
+          class="card-base card-hover p-6 sm:p-8 lg:p-9 mb-12 bg-white border border-slate-200 overflow-hidden"
+          id="featuredArticleCard"
+          data-blog
+          data-category="whatsapp-automation"
+        >
+          <div class="grid lg:grid-cols-12 gap-8 items-center">
+            <!-- Left Editorial Text -->
+            <div class="lg:col-span-7 flex flex-col justify-center">
+              <div class="flex flex-wrap items-center gap-2.5">
+                <span class="bg-blue-50 text-blue-700 border border-blue-200 font-extrabold text-[11px] px-2.5 py-0.5 rounded tracking-wider uppercase">
+                  Featured Strategy
+                </span>
+                <span class="text-xs font-semibold text-slate-500">WhatsApp & Automation</span>
+                <span class="text-xs text-slate-300">•</span>
+                <span class="text-xs text-slate-500 font-medium">8 min comprehensive read</span>
+              </div>
+
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0a1f44] mt-3.5 leading-snug">
+                How Businesses Can Accelerate Revenue with WhatsApp Automation in 2025
+              </h2>
+
+              <p class="text-slate-600 text-sm sm:text-base mt-3.5 leading-relaxed">
+                As response latency directly impacts customer closing rates, leading firms are adopting official WhatsApp Business APIs to qualify inbound prospects within seconds, automate payment prompts, and scale CRM syncs effortlessly.
+              </p>
+
+              <!-- Author / Team Stamp -->
+              <div class="flex items-center gap-3.5 mt-6 pt-5 border-t border-slate-100">
+                <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-700 font-bold text-xs flex items-center justify-center border border-blue-200 shrink-0">
+                  AT
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-[#0a1f44]">Aken Tech Strategy Group</div>
+                  <div class="text-[11px] text-slate-500">Published Sep 15, 2025 • Verified Implementation Framework</div>
+                </div>
+              </div>
+
+              <div class="mt-6 flex flex-wrap items-center gap-4">
+                <a class="btn btn-primary" href="#read-featured">
+                  Read Full Article →
+                </a>
+                <button
+                  type="button"
+                  class="btn text-slate-600 hover:text-blue-600 border border-slate-200 bg-white hover:bg-slate-50 text-xs"
+                  onclick="bookmarkArticle(this)"
+                >
+                  <span class="bookmark-icon">★</span> Bookmark
+                </button>
+              </div>
+            </div>
+
+            <!-- Right Visual Component -->
+            <div class="lg:col-span-5">
+              <div class="relative rounded-xl overflow-hidden border border-slate-200 shadow-inner group">
+                <img
+                  class="h-64 sm:h-72 w-full object-cover group-hover:scale-105 transition duration-500"
+                  src="https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=900&q=80"
+                  alt="WhatsApp automation interface diagram"
+                  loading="lazy"
+                />
+                <div class="absolute bottom-3 left-3 bg-[#0a1f44]/90 backdrop-blur-sm text-white px-3 py-1 rounded text-xs font-semibold border border-white/20">
+                  Automation Case Study
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Section Title & Status Strip -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-7 pb-3 border-b border-slate-200/80">
+          <div>
+            <div class="eyebrow-tag text-blue-600">CURATED EDITORIALS</div>
+            <h2 class="text-2xl font-extrabold text-[#0a1f44] mt-0.5">Latest Strategic Insights</h2>
+          </div>
+          <div class="text-xs font-semibold text-slate-500" id="articlesCounter">
+            Showing all 8 articles
+          </div>
+        </div>
+
+        <!-- 4-Column Responsive Articles Grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="articlesGrid">
+          <!-- Article 1 -->
+          <article
+            class="card-base card-hover flex flex-col overflow-hidden"
+            data-blog
+            data-category="digital-marketing"
+          >
+            <div class="relative overflow-hidden h-44 bg-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover hover:scale-105 transition duration-300"
+                alt="Skyline and digital advertising metrics"
+                loading="lazy"
+              />
+              <span class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-sm text-blue-700 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
+                Digital Marketing
+              </span>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="font-bold text-base text-[#0a1f44] leading-snug line-clamp-2">
+                Meta Ads Strategy for Real Estate in 2025
+              </h3>
+              <p class="text-xs text-slate-600 mt-2.5 line-clamp-3 leading-relaxed flex-1">
+                Learn how property developers and brokerages use custom algorithmic audiences and verified lead forms to lower cost-per-site visit.
+              </p>
+              <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-medium">
+                <span>Sep 12, 2025</span>
+                <span>6 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article
+            class="card-base card-hover flex flex-col overflow-hidden"
+            data-blog
+            data-category="web-development"
+          >
+            <div class="relative overflow-hidden h-44 bg-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover hover:scale-105 transition duration-300"
+                alt="Web analytics interface"
+                loading="lazy"
+              />
+              <span class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-sm text-blue-700 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
+                Web Development
+              </span>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="font-bold text-base text-[#0a1f44] leading-snug line-clamp-2">
+                Why Every Business Needs a High-Performance Website
+              </h3>
+              <p class="text-xs text-slate-600 mt-2.5 line-clamp-3 leading-relaxed flex-1">
+                A modern web platform establishes executive trust, converts organic searchers, and speeds up digital transaction velocities.
+              </p>
+              <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-medium">
+                <span>Sep 10, 2025</span>
+                <span>5 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article
+            class="card-base card-hover flex flex-col overflow-hidden"
+            data-blog
+            data-category="ngo"
+          >
+            <div class="relative overflow-hidden h-44 bg-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover hover:scale-105 transition duration-300"
+                alt="Humanitarian community program"
+                loading="lazy"
+              />
+              <span class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-sm text-blue-700 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
+                NGO & Social Impact
+              </span>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="font-bold text-base text-[#0a1f44] leading-snug line-clamp-2">
+                Digital Transformation for NGOs & Non-Profits
+              </h3>
+              <p class="text-xs text-slate-600 mt-2.5 line-clamp-3 leading-relaxed flex-1">
+                How cloud databases, automated donor receipts, and volunteer communication pipelines enable organizations to magnify social outcomes.
+              </p>
+              <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-medium">
+                <span>Sep 08, 2025</span>
+                <span>7 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 4 -->
+          <article
+            class="card-base card-hover flex flex-col overflow-hidden"
+            data-blog
+            data-category="ai-&-technology"
+          >
+            <div class="relative overflow-hidden h-44 bg-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover hover:scale-105 transition duration-300"
+                alt="AI circuit nodes"
+                loading="lazy"
+              />
+              <span class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-sm text-blue-700 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
+                AI & Technology
+              </span>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="font-bold text-base text-[#0a1f44] leading-snug line-clamp-2">
+                The Future of AI in Daily Business Operations
+              </h3>
+              <p class="text-xs text-slate-600 mt-2.5 line-clamp-3 leading-relaxed flex-1">
+                Explore how purpose-built machine learning copilots and voice automation handle high-frequency workflows without administrative bloat.
+              </p>
+              <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-medium">
+                <span>Sep 05, 2025</span>
+                <span>6 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 5 -->
+          <article
+            class="card-base card-hover flex flex-col overflow-hidden"
+            data-blog
+            data-category="business-growth"
+          >
+            <div class="relative overflow-hidden h-44 bg-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover hover:scale-105 transition duration-300"
+                alt="Strategy session in boardroom"
+                loading="lazy"
+              />
+              <span class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-sm text-blue-700 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
+                Business Growth
+              </span>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="font-bold text-base text-[#0a1f44] leading-snug line-clamp-2">
+                5 Proven Ways to Scale Business Revenue Online
+              </h3>
+              <p class="text-xs text-slate-600 mt-2.5 line-clamp-3 leading-relaxed flex-1">
+                Practical frameworks across digital positioning, customer lifecycle nurture, and analytics accountability to fuel sustainable quarter-on-quarter growth.
+              </p>
+              <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-medium">
+                <span>Sep 01, 2025</span>
+                <span>5 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 6 -->
+          <article
+            class="card-base card-hover flex flex-col overflow-hidden"
+            data-blog
+            data-category="whatsapp-automation"
+          >
+            <div class="relative overflow-hidden h-44 bg-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover hover:scale-105 transition duration-300"
+                alt="Mobile instant messaging platform"
+                loading="lazy"
+              />
+              <span class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-sm text-blue-700 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
+                WhatsApp Automation
+              </span>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="font-bold text-base text-[#0a1f44] leading-snug line-clamp-2">
+                WhatsApp API vs WhatsApp Business App
+              </h3>
+              <p class="text-xs text-slate-600 mt-2.5 line-clamp-3 leading-relaxed flex-1">
+                Comprehensive comparison covering concurrent agents, green-tick brand verification, automated webhook notifications, and monthly messaging allowances.
+              </p>
+              <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-medium">
+                <span>Aug 28, 2025</span>
+                <span>6 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 7 -->
+          <article
+            class="card-base card-hover flex flex-col overflow-hidden"
+            data-blog
+            data-category="real-estate"
+          >
+            <div class="relative overflow-hidden h-44 bg-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover hover:scale-105 transition duration-300"
+                alt="Modern property architectural exterior"
+                loading="lazy"
+              />
+              <span class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-sm text-blue-700 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
+                Real Estate
+              </span>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="font-bold text-base text-[#0a1f44] leading-snug line-clamp-2">
+                Real Estate CRM – The Industry Game Changer
+              </h3>
+              <p class="text-xs text-slate-600 mt-2.5 line-clamp-3 leading-relaxed flex-1">
+                Centralize buyer inquiry flows, distribute leads automatically by ticket size, and monitor agent conversion rates in real time.
+              </p>
+              <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-medium">
+                <span>Aug 26, 2025</span>
+                <span>5 min read</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 8 -->
+          <article
+            class="card-base card-hover flex flex-col overflow-hidden"
+            data-blog
+            data-category="ai-&-technology"
+          >
+            <div class="relative overflow-hidden h-44 bg-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover hover:scale-105 transition duration-300"
+                alt="Advanced tech chip architecture"
+                loading="lazy"
+              />
+              <span class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-sm text-blue-700 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
+                AI & Technology
+              </span>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="font-bold text-base text-[#0a1f44] leading-snug line-clamp-2">
+                Top Technology Trends to Watch Across 2025
+              </h3>
+              <p class="text-xs text-slate-600 mt-2.5 line-clamp-3 leading-relaxed flex-1">
+                From autonomous orchestration agents to cloud cybersecurity postures, prepare your enterprise infrastructure for upcoming technological benchmarks.
+              </p>
+              <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-medium">
+                <span>Aug 26, 2025</span>
+                <span>7 min read</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- No Results Fallback Block -->
+        <div id="noResultsState" class="hidden text-center py-16 card-base p-8 my-6">
+          <div class="text-3xl mb-2 text-slate-400">🔍</div>
+          <h3 class="text-lg font-bold text-[#0a1f44]">No matching articles found</h3>
+          <p class="text-slate-500 text-sm mt-1 max-w-md mx-auto">
+            We couldn't find any articles matching your search query or selected filter criteria.
+          </p>
+          <button id="resetFilterBtn" class="btn btn-primary mt-5 text-xs">
+            Reset All Filters
+          </button>
+        </div>
+
+        <!-- Topic Clusters / Executive Focus Areas -->
+        <div class="mt-16 pt-10 border-t border-slate-200">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <div class="eyebrow-tag text-blue-600">BROWSE DOMAIN SPECIALTIES</div>
+              <h2 class="text-xl font-extrabold text-[#0a1f44] mt-0.5">Topic Focus Areas</h2>
+            </div>
+            <button
+              class="text-xs font-bold text-blue-600 hover:text-blue-800 transition"
+              onclick="filterByTopic('all')"
+            >
+              View All Topics →
+            </button>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3.5">
+            <!-- Cluster 1 -->
+            <div
+              class="card-base p-4 text-center cursor-pointer hover:border-blue-400 hover:shadow-md transition"
+              onclick="filterByTopic('digital-marketing')"
+            >
+              <div class="w-10 h-10 mx-auto rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-sm font-bold mb-2.5">
+                📢
+              </div>
+              <div class="font-bold text-xs text-[#0a1f44] leading-tight">Digital Marketing</div>
+              <span class="text-[11px] text-slate-400 mt-1 block">28 Insights</span>
+            </div>
+
+            <!-- Cluster 2 -->
+            <div
+              class="card-base p-4 text-center cursor-pointer hover:border-blue-400 hover:shadow-md transition"
+              onclick="filterByTopic('web-development')"
+            >
+              <div class="w-10 h-10 mx-auto rounded-full bg-sky-50 text-sky-600 flex items-center justify-center text-sm font-bold mb-2.5">
+                🌐
+              </div>
+              <div class="font-bold text-xs text-[#0a1f44] leading-tight">Web Development</div>
+              <span class="text-[11px] text-slate-400 mt-1 block">18 Insights</span>
+            </div>
+
+            <!-- Cluster 3 -->
+            <div
+              class="card-base p-4 text-center cursor-pointer hover:border-blue-400 hover:shadow-md transition"
+              onclick="filterByTopic('business-growth')"
+            >
+              <div class="w-10 h-10 mx-auto rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center text-sm font-bold mb-2.5">
+                📈
+              </div>
+              <div class="font-bold text-xs text-[#0a1f44] leading-tight">Business Growth</div>
+              <span class="text-[11px] text-slate-400 mt-1 block">24 Insights</span>
+            </div>
+
+            <!-- Cluster 4 -->
+            <div
+              class="card-base p-4 text-center cursor-pointer hover:border-blue-400 hover:shadow-md transition"
+              onclick="filterByTopic('whatsapp-automation')"
+            >
+              <div class="w-10 h-10 mx-auto rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm font-bold mb-2.5">
+                💬
+              </div>
+              <div class="font-bold text-xs text-[#0a1f44] leading-tight">WhatsApp Auto</div>
+              <span class="text-[11px] text-slate-400 mt-1 block">16 Insights</span>
+            </div>
+
+            <!-- Cluster 5 -->
+            <div
+              class="card-base p-4 text-center cursor-pointer hover:border-blue-400 hover:shadow-md transition"
+              onclick="filterByTopic('real-estate')"
+            >
+              <div class="w-10 h-10 mx-auto rounded-full bg-amber-50 text-amber-600 flex items-center justify-center text-sm font-bold mb-2.5">
+                🏢
+              </div>
+              <div class="font-bold text-xs text-[#0a1f44] leading-tight">Real Estate</div>
+              <span class="text-[11px] text-slate-400 mt-1 block">14 Insights</span>
+            </div>
+
+            <!-- Cluster 6 -->
+            <div
+              class="card-base p-4 text-center cursor-pointer hover:border-blue-400 hover:shadow-md transition"
+              onclick="filterByTopic('ngo')"
+            >
+              <div class="w-10 h-10 mx-auto rounded-full bg-rose-50 text-rose-600 flex items-center justify-center text-sm font-bold mb-2.5">
+                🤝
+              </div>
+              <div class="font-bold text-xs text-[#0a1f44] leading-tight">NGO & Social</div>
+              <span class="text-[11px] text-slate-400 mt-1 block">12 Insights</span>
+            </div>
+
+            <!-- Cluster 7 -->
+            <div
+              class="card-base p-4 text-center cursor-pointer hover:border-blue-400 hover:shadow-md transition"
+              onclick="filterByTopic('ai-&-technology')"
+            >
+              <div class="w-10 h-10 mx-auto rounded-full bg-purple-50 text-purple-600 flex items-center justify-center text-sm font-bold mb-2.5">
+                🤖
+              </div>
+              <div class="font-bold text-xs text-[#0a1f44] leading-tight">AI & Tech</div>
+              <span class="text-[11px] text-slate-400 mt-1 block">20 Insights</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Executive Newsletter Subscription -->
+    <section class="py-14 bg-gradient-to-r from-blue-50/70 via-white to-blue-50/70 border-y border-blue-100/70">
+      <div class="container-x">
+        <div class="card-base p-8 lg:p-10 border-blue-200 shadow-sm bg-white/95">
+          <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div class="max-w-xl">
+              <span class="eyebrow-tag text-blue-600">STAY STRATEGICALLY INFORMED</span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0a1f44] mt-1.5">
+                Get Enterprise Insights Straight to Your Inbox
+              </h2>
+              <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                Join over 4,200 founders, operations leaders, and growth marketers who receive our bi-weekly breakdown on technology optimization and modern funnel architecture.
+              </p>
+            </div>
+
+            <div class="w-full lg:w-auto">
+              <form id="newsletterForm" class="flex flex-col sm:flex-row gap-2.5 w-full lg:w-[420px]">
+                <input
+                  id="newsletterEmail"
+                  type="email"
+                  required
+                  placeholder="executive@company.com"
+                  class="px-4 py-3 border border-slate-300 rounded-lg text-sm w-full outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition"
+                />
+                <button type="submit" class="btn btn-primary whitespace-nowrap shadow-sm">
+                  Subscribe →
+                </button>
+              </form>
+              <div class="flex items-center justify-between mt-2.5 px-1 text-[11px] text-slate-500">
+                <span>🔒 Zero spam guarantee. Unsubscribe with 1-click anytime.</span>
+                <span id="newsletterStatus" class="hidden font-bold text-emerald-600">✓ Welcome to the briefing list!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Complete Corporate Footer Structure (Unchanged Brand Anatomy) -->
+    <footer>
+      <!-- Dark Consultation Banner -->
+      <section class="bg-[#061b38] py-12 text-white border-b border-slate-800">
+        <div class="container-x flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div>
+            <div class="eyebrow-tag text-sky-400">READY TO GROW?</div>
+            <h2 class="text-2xl md:text-3xl font-extrabold mt-1 text-white">
+              Turn Your Goals Into Measurable Results
+            </h2>
+            <p class="text-slate-300 mt-2 text-sm max-w-xl">
+              Schedule a strategy audit to identify how our digital engineering, automation frameworks, and targeted performance campaigns can scale your business.
+            </p>
+          </div>
+          <a href="contact.html" class="btn btn-light shadow-sm">Get Free Consultation →</a>
+        </div>
+      </section>
+
+      <!-- Main Footer Columns -->
+      <div class="bg-white">
+        <div class="container-x py-14 grid sm:grid-cols-2 md:grid-cols-4 gap-10">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="logo-mark">AT</span>
+              <span class="logo-name text-sm">Aken Tech Solution</span>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Aken Tech Solution empowers enterprises, growing brands, and non-profit institutions with custom development, end-to-end automation, and performance marketing.
+            </p>
+            <div class="flex gap-4 mt-6 text-sm text-slate-600">
+              <span class="hover:text-blue-600 cursor-pointer font-bold transition">in</span>
+              <span class="hover:text-blue-600 cursor-pointer font-bold transition">◎</span>
+              <span class="hover:text-blue-600 cursor-pointer font-bold transition">▶</span>
+              <span class="hover:text-blue-600 cursor-pointer font-bold transition">f</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-extrabold text-sm mb-4 text-[#0a1f44] tracking-wider uppercase">Quick Links</h3>
+            <div class="space-y-2.5 text-xs text-slate-600">
+              <a class="block hover:text-blue-600 transition" href="index.html">Home</a>
+              <a class="block hover:text-blue-600 transition" href="about.html">About Us</a>
+              <a class="block hover:text-blue-600 transition" href="services.html">Services</a>
+              <a class="block hover:text-blue-600 transition" href="products.html">Products</a>
+              <a class="block hover:text-blue-600 transition" href="industries.html">Industries</a>
+              <a class="block hover:text-blue-600 transition" href="portfolio.html">Portfolio</a>
+              <a class="block text-blue-600 font-semibold" href="blog.html">Blog</a>
+              <a class="block hover:text-blue-600 transition" href="contact.html">Contact</a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-extrabold text-sm mb-4 text-[#0a1f44] tracking-wider uppercase">Our Services</h3>
+            <div class="space-y-2.5 text-xs text-slate-600">
+              <div class="hover:text-blue-600 cursor-pointer transition">Performance Marketing</div>
+              <div class="hover:text-blue-600 cursor-pointer transition">Real Estate Solutions</div>
+              <div class="hover:text-blue-600 cursor-pointer transition">Web Development</div>
+              <div class="hover:text-blue-600 cursor-pointer transition">Custom Software & CRM</div>
+              <div class="hover:text-blue-600 cursor-pointer transition">WhatsApp Automation</div>
+              <div class="hover:text-blue-600 cursor-pointer transition">AI Calling & AI Agents</div>
+              <div class="hover:text-blue-600 cursor-pointer transition">NGO Digital Solutions</div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-extrabold text-sm mb-4 text-[#0a1f44] tracking-wider uppercase">Contact Us</h3>
+            <div class="space-y-3 text-xs text-slate-600">
+              <div class="flex items-center gap-2"><span>☎</span> +91 98765 43210</div>
+              <div class="flex items-center gap-2"><span>✉</span> hello@akentech.in</div>
+              <div class="flex items-center gap-2"><span>⌖</span> Thane, Mumbai, India</div>
+              <div class="flex items-center gap-2"><span>◉</span> Serving Clients Worldwide</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legal Subfooter -->
+      <div class="bg-[#04162d] text-slate-400 text-xs py-4 border-t border-slate-900">
+        <div class="container-x flex flex-col sm:flex-row justify-between items-center gap-3">
+          <span>© 2025 Aken Tech Solution. All rights reserved.</span>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-white transition">Privacy Policy</a>
+            <a href="#" class="hover:text-white transition">Terms & Conditions</a>
+            <a href="#" class="hover:text-white transition">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script Engine: Responsive Drawer, Simultaneous Live Search & Multi-Category Filtering -->
+    <script>
+      // Mobile Drawer Toggle
+      function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        if (menu) menu.classList.toggle("open");
+      }
+
+      // App Filter State
+      let selectedCategory = "all";
+      let searchKeyword = "";
+
+      const searchInput = document.getElementById("blogSearch");
+      const clearSearchBtn = document.getElementById("clearSearchBtn");
+      const categoryPills = document.querySelectorAll(".category-pill");
+      const articleCards = document.querySelectorAll("#articlesGrid [data-blog]");
+      const featuredCard = document.getElementById("featuredArticleCard");
+      const noResultsState = document.getElementById("noResultsState");
+      const articlesCounter = document.getElementById("articlesCounter");
+      const resetFilterBtn = document.getElementById("resetFilterBtn");
+      const newsletterForm = document.getElementById("newsletterForm");
+      const newsletterStatus = document.getElementById("newsletterStatus");
+
+      // Unified Filter Function
+      function applyFilters() {
+        let matchedCount = 0;
+        const normalizedSearch = searchKeyword.trim().toLowerCase();
+
+        // 1. Filter Grid Articles
+        articleCards.forEach((card) => {
+          const cat = card.getAttribute("data-category") || "";
+          const text = card.innerText.toLowerCase();
+
+          const matchesCat = selectedCategory === "all" || cat === selectedCategory;
+          const matchesQuery = !normalizedSearch || text.includes(normalizedSearch);
+
+          if (matchesCat && matchesQuery) {
+            card.classList.remove("hidden");
+            matchedCount++;
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+
+        // 2. Filter Featured Story
+        if (featuredCard) {
+          const featuredCat = featuredCard.getAttribute("data-category") || "";
+          const featuredText = featuredCard.innerText.toLowerCase();
+
+          const matchesCat = selectedCategory === "all" || featuredCat === selectedCategory;
+          const matchesQuery = !normalizedSearch || featuredText.includes(normalizedSearch);
+
+          if (matchesCat && matchesQuery) {
+            featuredCard.classList.remove("hidden");
+          } else {
+            featuredCard.classList.add("hidden");
+          }
+        }
+
+        // 3. Update Status UI & Fallback
+        if (matchedCount === 0) {
+          noResultsState.classList.remove("hidden");
+          articlesCounter.textContent = "Showing 0 articles";
+        } else {
+          noResultsState.classList.add("hidden");
+          articlesCounter.textContent = `Showing ${matchedCount} article${matchedCount === 1 ? '' : 's'}`;
+        }
+
+        // 4. Toggle Clear Button
+        if (clearSearchBtn) {
+          clearSearchBtn.classList.toggle("hidden", searchKeyword.length === 0);
+        }
+      }
+
+      // Category Pill Click
+      categoryPills.forEach((pill) => {
+        pill.addEventListener("click", () => {
+          categoryPills.forEach((p) => p.classList.remove("active"));
+          pill.classList.add("active");
+          selectedCategory = pill.getAttribute("data-filter") || "all";
+          applyFilters();
+        });
+      });
+
+      // Quick Trending Tag Clicks
+      document.querySelectorAll(".quick-tag").forEach((tag) => {
+        tag.addEventListener("click", () => {
+          const query = tag.getAttribute("data-tag");
+          if (searchInput) {
+            searchInput.value = query;
+            searchKeyword = query;
+            applyFilters();
+            window.scrollTo({
+              top: document.getElementById("categoryTabs").offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Search Field Input
+      if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+          searchKeyword = e.target.value;
+          applyFilters();
+        });
+      }
+
+      // Clear Search Button
+      if (clearSearchBtn) {
+        clearSearchBtn.addEventListener("click", () => {
+          searchInput.value = "";
+          searchKeyword = "";
+          applyFilters();
+          searchInput.focus();
+        });
+      }
+
+      // Topic Cluster Direct Navigation
+      window.filterByTopic = function (topicKey) {
+        selectedCategory = topicKey;
+        categoryPills.forEach((pill) => {
+          const isTarget = pill.getAttribute("data-filter") === topicKey;
+          pill.classList.toggle("active", isTarget);
+          if (isTarget) {
+            pill.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+          }
+        });
+        applyFilters();
+        const grid = document.getElementById("articlesGrid");
+        if (grid) {
+          window.scrollTo({
+            top: grid.offsetTop - 140,
+            behavior: "smooth",
+          });
+        }
+      };
+
+      // Reset All Filter Button
+      if (resetFilterBtn) {
+        resetFilterBtn.addEventListener("click", () => {
+          selectedCategory = "all";
+          searchKeyword = "";
+          if (searchInput) searchInput.value = "";
+          categoryPills.forEach((pill) => {
+            pill.classList.toggle("active", pill.getAttribute("data-filter") === "all");
+          });
+          applyFilters();
+        });
+      }
+
+      // Bookmark Toggle
+      window.bookmarkArticle = function (btn) {
+        const icon = btn.querySelector(".bookmark-icon");
+        const isSaved = btn.getAttribute("data-saved") === "true";
+        if (isSaved) {
+          btn.setAttribute("data-saved", "false");
+          btn.classList.remove("text-blue-600", "border-blue-300");
+          if (icon) icon.textContent = "★";
+        } else {
+          btn.setAttribute("data-saved", "true");
+          btn.classList.add("text-blue-600", "border-blue-300");
+          if (icon) icon.textContent = "✓";
+        }
+      };
+
+      // Newsletter Handler
+      if (newsletterForm) {
+        newsletterForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const email = document.getElementById("newsletterEmail");
+          if (email && email.value) {
+            email.value = "";
+            newsletterStatus.classList.remove("hidden");
+            setTimeout(() => {
+              newsletterStatus.classList.add("hidden");
+            }, 6000);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
